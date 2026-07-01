@@ -3,5 +3,6 @@ import person from './person'
 import newsPost from './newsPost'
 import event from './event'
 import roomHireRate from './roomHireRate'
+import sitePage from './sitePage'
 
-export const schemaTypes = [serviceTime, person, newsPost, event, roomHireRate]
+export const schemaTypes = [serviceTime, person, newsPost, event, roomHireRate, sitePage]

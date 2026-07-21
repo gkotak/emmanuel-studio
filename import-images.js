@@ -30,7 +30,9 @@ const slots = [
   {key: 'weddings-2', label: 'Weddings — photo 2', file: 'wedding-couple.jpg', alt: 'A newly married couple sharing a joyful moment in the church after their wedding'},
   {key: 'weddings-3', label: 'Weddings — photo 3', file: 'wedding-aisle.webp', alt: 'A bride and groom walking together down the aisle at Emmanuel'},
   {key: 'baptisms-aside-font', label: 'Baptisms — font photo (sidebar)', file: 'baptism-font.jpg', alt: 'A child being held at the font during a baptism'},
-  {key: 'room-hire', label: 'Room Hire — main photo', file: 'room-hire-party.jpg', alt: "A children's party inflatable set up in the nave"},
+  {key: 'room-hire-1', label: 'Room Hire — gallery photo 1', file: 'room-hire-party.jpg', alt: "A children's party inflatable set up in the nave"},
+  {key: 'room-hire-2', label: 'Room Hire — gallery photo 2 (empty)', file: null, alt: ''},
+  {key: 'room-hire-3', label: 'Room Hire — gallery photo 3 (empty)', file: null, alt: ''},
   {key: 'food-bank', label: 'Food Bank — main photo', file: 'parish-supper.jpg', alt: 'Parishioners sharing a candlelit supper at a long table in the church'},
   {key: 'history-1', label: 'History — photo 1', file: 'nave-wide.jpg', alt: 'The nave of Emmanuel Church looking east toward the apse'},
   {key: 'history-2', label: 'History — photo 2', file: 'hero.jpg', alt: 'The interior of Emmanuel Church showing pointed arches and lancet windows'},
@@ -58,21 +60,29 @@ async function uploadAsset(file) {
 
 const imageRef = (assetId) => ({_type: 'image', asset: {_type: 'reference', _ref: assetId}})
 
+// Slot keys that were renamed/removed and should be cleaned up if present.
+const obsoleteIds = ['siteImage-room-hire']
+
 async function run() {
   console.log('Uploading assets…')
+
+  for (const id of obsoleteIds) {
+    await client.delete(id).catch(() => {})
+  }
 
   // 1) siteImage slot docs
   const tx = client.transaction()
   for (const slot of slots) {
-    const assetId = await uploadAsset(slot.file)
-    tx.createOrReplace({
+    const doc = {
       _id: `siteImage-${slot.key}`,
       _type: 'siteImage',
       key: slot.key,
       label: slot.label,
       alt: slot.alt,
-      image: imageRef(assetId),
-    })
+    }
+    // Empty slots (file: null) are created without an image, ready to fill.
+    if (slot.file) doc.image = imageRef(await uploadAsset(slot.file))
+    tx.createOrReplace(doc)
   }
   await tx.commit()
   console.log(`Created/updated ${slots.length} siteImage slots`)

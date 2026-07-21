@@ -4,6 +4,7 @@ import newsPost from './newsPost'
 import event from './event'
 import roomHireRate from './roomHireRate'
 import sitePage, {sectionTypes} from './sitePage'
+import siteImage from './siteImage'
 
 export const schemaTypes = [
   serviceTime,
@@ -12,5 +13,6 @@ export const schemaTypes = [
   event,
   roomHireRate,
   sitePage,
+  siteImage,
   ...sectionTypes,
 ]

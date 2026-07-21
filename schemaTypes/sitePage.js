@@ -107,9 +107,16 @@ const featureSection = {
     {name: 'eyebrow', title: 'Eyebrow (small label above)', type: 'string'},
     {name: 'heading', title: 'Heading', type: 'string'},
     {name: 'body', title: 'Body', type: 'array', of: [richTextBlock]},
-    {name: 'image', title: 'Image', type: 'image', options: {hotspot: true}},
+    {name: 'image', title: 'Image (upload)', type: 'image', options: {hotspot: true}},
+    {
+      name: 'imagePath',
+      title: 'Image path (existing site asset)',
+      description: 'Optional. Path to a bundled asset, e.g. /assets/first-communion.jpg. Used only if no image is uploaded above.',
+      type: 'string',
+    },
     {name: 'imageAlt', title: 'Image alt text', type: 'string'},
     {name: 'reverse', title: 'Image on the right', type: 'boolean', initialValue: false},
+    {name: 'isBand', title: 'Shaded background band', type: 'boolean', initialValue: false},
   ],
   preview: {
     select: {title: 'heading', subtitle: 'eyebrow', media: 'image'},
@@ -150,7 +157,13 @@ const peopleSection = {
             {name: 'role', title: 'Role', type: 'string'},
             {name: 'name', title: 'Name', type: 'string'},
             {name: 'bio', title: 'Bio', type: 'text', rows: 4},
-            {name: 'image', title: 'Photo', type: 'image', options: {hotspot: true}},
+            {name: 'image', title: 'Photo (upload)', type: 'image', options: {hotspot: true}},
+            {
+              name: 'imagePath',
+              title: 'Photo path (existing site asset)',
+              description: 'Optional. Used only if no photo is uploaded.',
+              type: 'string',
+            },
           ],
           preview: {
             select: {title: 'name', subtitle: 'role', media: 'image'},

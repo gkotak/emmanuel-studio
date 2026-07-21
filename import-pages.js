@@ -155,6 +155,29 @@ const pages = [
       'At Emmanuel we gladly baptise new members of whatever age into the family of God, praying for them as they embark on their exciting journey and pilgrimage of faith.',
       'Our baptism services tend to take place at our 10:30 service on the third Sunday of the month. If you\'d prefer, we can also offer baptism at our 9:15 Joyful Noise service.'
     ),
+    sections: [
+      {
+        _type: 'cardGridSection',
+        _key: 'bap-cards',
+        cards: [
+          {_key: 'b1', eyebrow: 'The sacrament of belonging', title: 'Baptism', body: 'Through baptism we are welcomed into the family of God and the life of the Church. We baptise people of every age — infants, children and adults alike — and walk with each household as they prepare.'},
+          {_key: 'b2', eyebrow: 'Once a year · taken by the Bishop', title: 'Confirmation', body: "We have a confirmation service once a year. Confirmations are taken by the Bishop and are the occasion for baptised people to 'confirm' the vows that were made on their behalf when they were baptised."},
+          {_key: 'b3', eyebrow: 'Good Shepherd Sunday · from age 8', title: 'First Holy Communion', body: 'At Emmanuel we admit to First Holy Communion those children who would like to take part in the Eucharist but are not yet old enough to be confirmed. We encourage children to wait to be confirmed until they are much older (around 16 or older), but invite them to participate fully in the sacrament of Holy Communion from around age 8. Admission typically takes place on Good Shepherd Sunday, following a series of 6–8 sessions teaching about the Eucharist.'},
+        ],
+      },
+      {
+        _type: 'featureSection',
+        _key: 'bap-feature',
+        isBand: true,
+        eyebrow: 'A growing faith',
+        heading: "Welcomed to the Lord's table",
+        imagePath: '/assets/first-communion.jpg',
+        imageAlt: 'Children and adults presented to the Bishop at a Confirmation and First Holy Communion service',
+        body: toBlocks(
+          'From the youngest children admitted to First Holy Communion, to those confirmed by the Bishop, we walk with each person as they take their next step in the life of faith — surrounded by the prayers of the whole community.'
+        ),
+      },
+    ],
     calloutHeading: 'A new beginning.',
     calloutBody: toBlocks(
       'Whatever your age, there is a place for you in the family of God at Emmanuel. We would love to walk this journey with you.'
@@ -170,6 +193,30 @@ const pages = [
       'Children and youth make up a core part of our church community at Emmanuel — and we know how much they have to teach us about spirituality and questions of faith.',
       "For this reason we invest heavily in their Christian growth: for our youngest members through the Joyful Noise congregation, and for older children and young people through Children's & Youth Church, singing in the choir, joining the serving team, and helping to lead the readings and intercessions at our monthly intergenerational worship."
     ),
+    sections: [
+      {
+        _type: 'cardGridSection',
+        _key: 'cf-sunday',
+        cards: [
+          {_key: 'cc1', eyebrow: 'Ages 4–11 · Godly Play', title: "Children's Church", body: "Throughout term time, Children's Church meets during the 10:30 Sunday service. Our curriculum follows the Godly Play method of Bible storytelling — an approach which seeks to inspire curiosity and wonder in our younger members.\n\nIt fosters a sense of the overwhelming love God has for all God's people, helping each child discover their own place in the story of faith."},
+          {_key: 'cc2', eyebrow: 'Ages 9–11 · Up to Year 7', title: 'Youth Church', body: 'Youth Church typically involves some games, music and a lively exploration of the Gospel of the Day, or a chosen topic for the term.\n\nOlder children are welcome to join, but we find that by Year 7 they tend to be ready to join us for the service in church — singing, serving, or leading prayers and readings.'},
+        ],
+      },
+      {
+        _type: 'featureSection',
+        _key: 'cf-stayplay',
+        isBand: true,
+        eyebrow: 'Thursdays in term time',
+        heading: 'Stay and Play',
+        imagePath: '/assets/children-families.jpg',
+        imageAlt: 'Children gathered at the altar steps with clergy during an all-age service',
+        body: toBlocks(
+          'Stay and Play happens every Thursday in term time, 9:30 to 11:00am. This is a relaxed, friendly drop-in session with loads of great toys and usually a bit of a sing-song at the end.',
+          "It's a great way to meet other local parents and carers, and to get answers to questions about life in West Hampstead with kids. Coffee, toast and healthy snacks are provided, and one of the clergy or our youth worker is always around to host.",
+          'All babies, toddlers and pre-school age children, together with their parents and carers, are warmly welcome — with plenty of tea and coffee for the adults.'
+        ),
+      },
+    ],
     calloutHeading: 'Come and join us.',
     calloutBody: toBlocks(
       "Whether on a Sunday morning or at Thursday's Stay and Play, we'd love to welcome you and your family to Emmanuel."
@@ -190,6 +237,43 @@ const pages = [
         { text: 'w.g.rose41@gmail.com', href: 'mailto:w.g.rose41@gmail.com' },
         '.',
       ]),
+    ],
+    sections: [
+      {
+        _type: 'featureSection',
+        _key: 'mu-heritage',
+        reverse: true,
+        eyebrow: 'Our musical heritage',
+        heading: 'A tradition stretching back over a century.',
+        imagePath: '/assets/music-choir.jpg',
+        imageAlt: 'The Emmanuel choir singing in the stalls beneath the organ, led by the Director of Music',
+        body: toBlocks(
+          'Music at Emmanuel is steeped in illustrious tradition. The English composer Harold Darke was organist at the church from 1906–1911, during which period he composed his setting of Christina Rossetti\'s "In the Bleak Midwinter".',
+          'In contrast to many choral societies, the choir tackles new repertoire on a weekly basis, with the aim of providing fulfilling and musically enriching opportunities no matter your previous choral experience.'
+        ),
+      },
+      {
+        _type: 'peopleSection',
+        _key: 'mu-people',
+        eyebrow: 'Those who lead our music',
+        people: [
+          {_key: 'p1', role: 'Director of Music', name: 'Will Rose', bio: "Will studied Music at Queens' College, Cambridge, where he was a Choral Scholar. At university he won several prestigious conducting prizes and conducted every major instrumental ensemble across the University. Away from Emmanuel, Will is a music teacher at a top London secondary school."},
+          {_key: 'p2', role: 'Organist', name: 'Joseph Verdin', bio: "On Sundays the choir is joined by Joseph Verdin, who held multiple Organ Scholarships at Durham University and has accompanied guest services at St Paul's Cathedral, St George's Chapel, Windsor, and York Minster."},
+        ],
+      },
+      {
+        _type: 'featureSection',
+        _key: 'mu-childrens',
+        eyebrow: 'For our youngest singers',
+        heading: "Children's Choir",
+        imagePath: '/assets/childrens-choir.jpg',
+        imageAlt: 'Robed young choristers gathered at the altar during a sung service',
+        body: [
+          richBlock('cc0', ['Come and sing with the Emmanuel Church choir! We rehearse once a week in the church with our choir director, Will. We sing in the church on the first Sunday of every month, and also in special services, including at Easter.']),
+          richBlock('cc1', ["We learn loads of exciting music, and always have lots of fun in our rehearsals. You don't need to be able to read sheet music to join, and it's a great way to make new friends! All rehearsals are free to attend."]),
+          richBlock('cc2', ['To find out more, please contact Will at ', {text: 'w.g.rose41@gmail.com', href: 'mailto:w.g.rose41@gmail.com'}, '.']),
+        ],
+      },
     ],
     calloutHeading: 'Lift your voice with us.',
     calloutBody: toBlocks(
@@ -227,6 +311,31 @@ const pages = [
     introBody: toBlocks(
       'While we hold fundraising events and rent out the church, one of the foundations of our finances is the tremendous support we receive from our congregation through regular donations.'
     ),
+    sections: [
+      {
+        _type: 'cardGridSection',
+        _key: 'dn-costs',
+        cards: [
+          {_key: 'dc1', title: 'Ministry', body: 'Clergy pay, housing and pension — the people who lead our worship and care.'},
+          {_key: 'dc2', title: 'Building', body: 'Maintenance, utilities and insurance for a much-loved Victorian church.'},
+          {_key: 'dc3', title: 'Administration', body: 'Office costs for the day-to-day operation of the parish and its activities.'},
+          {_key: 'dc4', title: 'Services', body: 'The direct costs of worship — music, liturgy, candles, vestments and more.'},
+          {_key: 'dc5', title: 'Outreach', body: 'Reaching beyond our walls — the food bank, night shelter and other care.'},
+        ],
+      },
+      {
+        _type: 'cardGridSection',
+        _key: 'dn-other',
+        cards: [
+          {_key: 'do1', title: 'Reading at a service', body: 'Share in the liturgy by reading the lessons aloud.'},
+          {_key: 'do2', title: 'Joining the choir', body: 'Add your voice to the music of the Sung Eucharist.'},
+          {_key: 'do3', title: 'Greeting people', body: 'Welcome visitors and regulars as they arrive at church.'},
+          {_key: 'do4', title: 'Sunday School', body: 'Lead or support our children during the morning service.'},
+          {_key: 'do5', title: 'Gardening', body: 'Help keep the church grounds and green looking their best.'},
+          {_key: 'do6', title: 'Small building works', body: 'Lend a hand with the practical upkeep of the building.'},
+        ],
+      },
+    ],
     calloutHeading: 'Every gift keeps the doors open.',
     calloutBody: toBlocks(
       'Thank you for supporting the life, worship and ministry of Emmanuel Church.'

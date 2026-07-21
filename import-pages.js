@@ -336,10 +336,8 @@ const pages = [
         ],
       },
     ],
-    calloutHeading: 'Every gift keeps the doors open.',
-    calloutBody: toBlocks(
-      'Thank you for supporting the life, worship and ministry of Emmanuel Church.'
-    ),
+    // Note: the donations page has no callout band (removed in the design),
+    // so calloutHeading/calloutBody are intentionally omitted here.
   },
 ]
 
